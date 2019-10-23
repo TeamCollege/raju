@@ -20,13 +20,26 @@
 
 <!-- bootstrap responsive view -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Insert title here</title>
+<title>Add Events</title>
 </head>
 <body>
-     <form action="admin" method="post" autocomplete="off" >
+     
  
  <div class="container">
- 			<h1 align="center" colour = "blue">Add Events</h1>
+ 
+ <div class="titles">
+<div class="row">
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+ <h1 class="fadeIn first">ADD EVENTS</h1>
+</div>
+</div>
+</div>
+ 
+  <div class="wrapper fadeInDown">
+            <div id="formContent">
+            
+            <form action="admin" method="post" autocomplete="off" >
+ 			
 			<table style="with: 50%">
 				<tr>
 					<td>Event Id</td>
@@ -49,11 +62,18 @@
 					<td><input type="text" name="location" required/></td>
 				</tr>
 				<tr>
-				<td><input type="submit" class="button" value="Submit" ></td>
+				<td><input type="submit" class="button" value="Submit" onclick="alert('Added Successfully!');" ></td>
 				</tr>
-				<td><input type ="submit" class="button" value ="Back"></td>
-				<a href="AdminMainMenu.html" class="fadeIn sixth">Back</a>
-				</div> 
+				
+				</table>
+				
+				    <!-- Sign Up as a New User -->
+                 <div id="formFooter">
+                      <a href="AdminMainMenu.html" class="fadeIn third">Go Back to Home Page</a>
+                </div>
 				</form>
+				</div>
+				</div>
+				</div>
 </body>
 </html>

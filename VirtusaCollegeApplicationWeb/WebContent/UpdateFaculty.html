@@ -19,10 +19,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="UpdateFaculty" method="post" autocomplete="off" >
+
  
- <div class="container"><br><br><br><br><br>
- 			<h1 align="center">Update Faculty</h1>
+ <div class="container">
+ 
+ <div class="titles">
+<div class="row">
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+ <h1 class="fadeIn first">UPDATE FACULTY</h1>
+</div>
+</div>
+</div>
+
+ <div class="wrapper fadeInDown">
+            <div id="formContent">
+ 			
+ 			<form action="UpdateFaculty" method="post" autocomplete="off" >
 			<table style="with: 50%">
 				<tr>
 					<td>Faculty Id</td>
@@ -37,9 +49,19 @@
 				<tr>
 				<td></td>
 				<td></td>
-				<td><input type="submit" class="button" value="Submit" ></td>
+				<td><input type="submit" class="button" value="Submit" onclick="alert('Deleted Successfully!');"></td>
 				</tr>
-				</div> 
+				</table>
+				
+				 <!-- Sign Up as a New User -->
+                 <div id="formFooter">
+                      <a href="AdminMainMenu.html" class="fadeIn third">Go Back to Home Page</a>
+                </div>
+				
 				</form>
+				</div>
+				</div>
+				</div>
+				
 </body>
 </html>

@@ -13,8 +13,6 @@ body {
     background-position: center;
 }
 
- 
-
 .container {
     width=100%;
 }
@@ -25,17 +23,8 @@ text-align: center;
 font-size: 70px;
 }
 
- 
-
-a:link {
-  display:inline-block;
-  font-size: 20px;
-  color: #47C3BD;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #00C6BA;
+a {
+	font-size: 25px;
 }
 
 h2 {
@@ -114,9 +103,8 @@ input[type=button], input[type=submit], input[type=reset]  {
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
   background-color: #00C6BA;
-  display: block; 
-  align-items:center;  
-  margin: 0 auto;
+  margin-left:30px;
+ 
   border: none;
   color: white;
   text-align: center;
@@ -125,14 +113,12 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
  
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
-  -moz-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
+	margin-left: 35px;
+
 }
 
-input[type=text] {
+input[type=text], input[type=password], input[type=number], input[type=date] {
+  margin-left:30px;
   padding: 20px;
   background-color: #f6f6f6;
   border: none;
@@ -142,8 +128,7 @@ input[type=text] {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 5px;
-  width: 85%;
+   width: 85%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -154,13 +139,13 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus {
+input[type=text]:focus, input[type=password]:focus , input[type=number]:focus, input[type=date]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
 
-input[type=text]:placeholder {
+input[type=text]:placeholder, input[type=password]:placeholder, input[type=number]:placeholder, input[type=date]:placeholder {
   color: #cccccc;
 }
 

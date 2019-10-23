@@ -4,7 +4,7 @@
 <meta charset="ISO-8859-1">
 
 <!-- css external style sheets -->
-<link rel="stylesheet" href="css/animation.css" text="text/css">
+<link rel="stylesheet" href="css/animation.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 
 <!-- bootstrap href -->
@@ -16,70 +16,150 @@
 
 <!-- bootstrap responsive view -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Insert title here</title>
+
+<title>Add Students</title>
+
 </head>
-<body>
-<form action="AddStudent" method="post" autocomplete="off" >
+<body style="height: auto;">
  
  <div class="container">
- 			<h1 align="center" colour = "blue">Add Student Details</h1>
-			<table style="with: 50%">
-				<tr>
-					<td>Student Id</td>
-					<td>:</td>
-					<td><input type="number" name="student_Id" required/></td>
-				</tr>
-				<tr>
-					<td>First Name</td>
-					<td>:</td>
-					<td><input type="text" name="first_name" required/></td>
-				</tr>
-				<tr>
-					<td>Last Name</td>
-					<td>:</td>
-					<td><input type="text" name="last_name" required/></td>
-				</tr>
-				<tr>
-					<td>EmailId</td>
-					<td>:</td>
-					<td><input type="text" name="email_id" required/></td>
-				</tr>
-				<tr>
-					<td>Phone Number</td>
-					<td>:</td>
-					<td><input type="number" name="phone_number" required/></td>
-				</tr>
-				<tr>
-					<td>10th Percentage</td>
-					<td>:</td>
-					<td><input type="number" name="tenth_percentage" required/></td>
-				</tr>
-				<tr>
-					<td>12th Percentage</td>
-					<td>:</td>
-					<td><input type="number" name="inter_percentage" required/></td>
-				</tr>
-				<tr>
-					<td>Aadhar Number</td>
-					<td>:</td>
-					<td><input type="number" name="aadhar_number" required/></td>
-				</tr>
-				<tr>
-					<td>DOB</td>
-					<td>:</td>
-					<td><input type="date" name="dob" required/></td>
-				</tr>
-				<tr>
-					<td>Department Name</td>
-					<td>:</td>
-					<td><input type="text" name="department_name" required/></td>
-				</tr>
-				<tr>
-				<td><input type="submit" class="button" value="Submit" ></td>
-				</tr>
-				<td><input type ="submit" class="button" value ="Back"></td>
-				<a href="AdminMainMenu.html" class="fadeIn sixth">Back</a>
-				</div> 
-				</form>
+ 
+ <div class="titles">
+<div class="row">
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+ <h1 class="fadeIn first">ADD STUDENTS</h1>
+</div>
+</div>
+</div>
+ 
+
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+
+                <!-- Login Form -->
+
+                <form action="" method="post" autocomplete="off">
+
+                    <!-- user id text box -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="number" class="fadeIn second"
+                                name="student_Id" placeholder="student id" required="required">
+                                
+                        </div>
+                    </div>
+
+
+                    <!-- first name text box -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="text" class="fadeIn third"
+                                name="first_name" placeholder="first name" required="required">
+                                
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- last name text box -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="text" class="fadeIn fourth"
+                                name="last_name" placeholder="last name" required="required">
+                               
+                        </div>
+                    </div>
+                    
+                    <!-- email id text box -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="text" class="fadeIn fifth"
+                                name="email_id" placeholder="email id" required="required">
+                               
+                        </div>
+                    </div>
+                    
+                     <!-- phone number text box -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="number" class="fadeIn sixth"
+                                name="phone_number" placeholder="phone number" required="required">
+                               
+                        </div>
+                    </div>
+                    
+                     <!-- percentage text boxes -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="number" class="fadeIn seventh"
+                                name="tenth_percentage" placeholder="tenth percentage" required="required">
+                               
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="number" class="fadeIn eighth"
+                                name="inter_percentage" placeholder="twelth percentage" required="required">
+                               
+                        </div>
+                    </div>
+                              
+                      <!-- aadhar card number text box -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="number" class="fadeIn ninth"
+                                name="aadhar_number" placeholder="aadhar card number" required="required">
+                               
+                        </div>
+                    </div>    
+                    
+                     <!-- date of birth text box -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="date" class="fadeIn tenth"
+                                name="dob" placeholder="date of birth" required="required" >
+                               
+                        </div>
+                    </div>       
+                    
+                    <!-- department name text box -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="text" class="fadeIn eleventh"
+                                name="department_name" placeholder="department name" required="required">
+                                
+                        </div>
+                    </div>   
+                    
+                    <!-- submit button -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="submit" class="fadeIn twelth" value="SUBMIT" onclick="alert('Submitted Successfully!');">
+                            <br>
+                        </div>
+                    </div>
+                    
+               
+                    <!-- cancel button -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                            <input type="reset" class="fadeIn thirteenth" value="Cancel">
+                            <br>
+                        </div>
+                    </div>
+                    
+                        <!-- Sign Up as a New User -->
+                 <div id="formFooter">
+                      <a href="AdminMainMenu.html" class="fadeIn fourteenth">Go Back to Home Page</a>
+                </div>
+                   
+                </form>  
+
+            </div>
+        </div>
+ 
+
+    </div>
+
 </body>
 </html>

@@ -41,14 +41,10 @@ public class AdminDAOImpl implements AdminDAO
 	}
 
 	@Override
-	public boolean storeStudentDetailsDAO(Student student) throws SQLException
+	public boolean storeStudentDetailsDAO(Student student) throws ClassNotFoundException, SQLException
 	{
-		try(Connection connection=ConnectionManager.openConnection();)
-		
-		{     
-		//student.forEach( (object)->{
+		Connection connection=ConnectionManager.openConnection();
 			String sql="insert into students values(?,?,?,?,?,?,?,?,?,?)";
-		try {
 			PreparedStatement preparedStatement=
 				connection.prepareStatement(sql);
 		preparedStatement.setInt(1, student.getStudentId());
@@ -63,21 +59,9 @@ public class AdminDAOImpl implements AdminDAO
 		preparedStatement.setString(10, student.getDepartmentName());
 		int rows = preparedStatement.executeUpdate();
 		if(rows>0)
-			System.out.println("Stduent Details are inserted into table successfully");
-		else
-			System.out.println("Failed to store the data");
-		}
-		catch(Exception e) {
-			
-		}
-	
-	//});
-		
-	}
-		catch(Exception e) {
-			
-		}
-		return true;
+			return true;
+		else    
+			return false;
 	}
 	@Override
 	public boolean updateStudentDetailsDAO(int id, String firstName) throws ClassNotFoundException, SQLException
@@ -97,12 +81,12 @@ public class AdminDAOImpl implements AdminDAO
 	}
 
 	@Override
-	public boolean deleteStudentDetailsDAO(String studentId) throws ClassNotFoundException, SQLException
+	public boolean deleteStudentDetailsDAO(int studentId) throws ClassNotFoundException, SQLException
 	{
 		Connection connection=ConnectionManager.openConnection();
 		PreparedStatement preparedStatement=
 				connection.prepareStatement("delete from students where student_id=?");
-		preparedStatement.setString(1, studentId);
+		preparedStatement.setInt(1, studentId);
 		int rows = preparedStatement.executeUpdate();
 		if(rows>0)
 			return true;
@@ -124,13 +108,16 @@ public class AdminDAOImpl implements AdminDAO
 			student.setStudentId(resultSet.getInt("student_id"));
 			student.setFirstName(resultSet.getString("first_name"));
 			student.setLastName(resultSet.getString("last_name"));
-			//student.setDateOfBirth(resultSet.getDate("DOB"));
 			student.setEmailAddress(resultSet.getString("email_id"));
 			student.setPhoneNumber(resultSet.getString("phone_number"));
 			student.setTenthPercentage(resultSet.getDouble("tenth_percentage"));
 			student.setInterPercentage(resultSet.getDouble("inter_percentage"));
+			student.setAadharNumber(resultSet.getString("aadhar_number"));
+			java.sql.Date
+			date = resultSet.getDate("dob");
+			student.setDateOfBirth(date.toLocalDate());
+			//student.setDateOfBirth(resultSet.getLocalDate("dob"));
 			student.setDepartmentName(resultSet.getString("department_name"));
-			//student.setAadharNUmber(resultSet.getString("aadhar_number"));
 			studentList.add(student);
 			
 		}
@@ -189,15 +176,31 @@ public class AdminDAOImpl implements AdminDAO
 			return false;
 	}
 	@Override
-	public boolean viewFacultyDetailsDAO(int facultyId2) throws ClassNotFoundException, SQLException
+	public List<Faculty> viewFacultyDetailsDAO(int facultyId2) throws ClassNotFoundException, SQLException
 	{
+		Faculty faculty = new Faculty();
 		Connection connection=ConnectionManager.openConnection();
 		PreparedStatement preparedStatement=
 				connection.prepareStatement("select * from faculty where faculty_id=?");
 		preparedStatement.setInt(1, facultyId2);
 		ResultSet resultSet =  preparedStatement.executeQuery();
+		List<Faculty> faculties = new ArrayList<Faculty>();
+		while(resultSet.next())
+		{
+			faculty.setFacultyId(resultSet.getString("faculty_id"));
+			faculty.setFirstName(resultSet.getString("first_name"));
+			faculty.setLastName(resultSet.getString("last_name"));
+			java.sql.Date
+			date = resultSet.getDate("dob");
+			faculty.setDateOfBirth(date.toLocalDate());
+			faculty.setEmailAddress(resultSet.getString("email_id"));
+			faculty.setPhoneNumber(resultSet.getString("phone_number"));
+			faculty.setDepartmentName(resultSet.getString("department_name"));
+			faculty.setSalary(resultSet.getInt("salary"));
+			faculties.add(faculty);
+		}
 		
-		return false;
+		return faculties;
 	}
 
 	@Override

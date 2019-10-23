@@ -10,14 +10,14 @@ import com.virtusa.entities.Student;
 public interface AdminDAO 
 {        
 	public boolean storeApprovedApplicantDetailsDAO(Applicant app)throws ClassNotFoundException, SQLException;
-	public boolean storeStudentDetailsDAO(Student student)throws SQLException;
+	public boolean storeStudentDetailsDAO(Student student)throws ClassNotFoundException, SQLException;
 	public boolean updateStudentDetailsDAO(int id, String firstName)throws ClassNotFoundException, SQLException;
-	public boolean deleteStudentDetailsDAO(String studentId)throws ClassNotFoundException, SQLException;
+	public boolean deleteStudentDetailsDAO(int studentId)throws ClassNotFoundException, SQLException;
 	public List<Student> viewStudentDetailsDAO(int studentId2)throws ClassNotFoundException, SQLException;
 	public boolean storeFacultyDetailsDAO(Faculty faculty)throws ClassNotFoundException, SQLException;
 	public boolean updateFacultyDetailsDAO(String phoneNumber , int id)throws ClassNotFoundException, SQLException;
 	public boolean deleteFacultyDetailsDAO(int facultyId)throws ClassNotFoundException, SQLException;
-	public boolean viewFacultyDetailsDAO(int facultyId2)throws ClassNotFoundException, SQLException;
+	public List<Faculty> viewFacultyDetailsDAO(int facultyId2)throws ClassNotFoundException, SQLException;
 	public boolean addEventsDAO(int id, String name, String date, String location)throws ClassNotFoundException, SQLException;
 	public boolean deleteEventsDAO(int eventId)throws ClassNotFoundException, SQLException;
 	public boolean addPlacementsDAO(int id, String companyName, String date, double percentage)throws ClassNotFoundException, SQLException;

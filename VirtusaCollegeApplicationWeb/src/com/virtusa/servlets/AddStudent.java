@@ -56,7 +56,7 @@ public class AddStudent extends HttpServlet {
     	String phoneNumber=request.getParameter("phone_number");
     	double tenthPercentage = Double.parseDouble(request.getParameter("tenth_percentage"));
     	double interPercentage = Double.parseDouble(request.getParameter("inter_percentage"));
-    	String aadharNumber = request.getParameter("aadhar_name");
+    	String aadharNumber = request.getParameter("aadhar_number");
     	String dob=request.getParameter("dob");
     	formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         localDate = LocalDate.parse(dob, formatter);

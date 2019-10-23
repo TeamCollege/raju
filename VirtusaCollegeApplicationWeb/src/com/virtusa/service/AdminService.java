@@ -1,5 +1,8 @@
 package com.virtusa.service;
 
+import java.util.List;
+
+import com.virtusa.entities.Student;
 import com.virtusa.model.FacultyModel;
 import com.virtusa.model.StudentModel;
 
@@ -7,9 +10,9 @@ public interface AdminService
 {
 	public void approveApplicantService(int applicantNumber);
 	public String addStudentService(StudentModel studentModel);
-	public void deleteStudentService(String studentId);
+	public boolean deleteStudentService(int studentId);
 	public void updateStudentService(int id, String firstName);
-	public void viewStudentService(int studentId2);
+	public List<Student> viewStudentService(int studentId2);
 	public String addFacultyService(FacultyModel facultyModel);       
 	public boolean deleteFacultyService(int facultyId);
 	public boolean updateFacultyService(String phoneNumber, int id);

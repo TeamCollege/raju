@@ -34,7 +34,7 @@
  <div class="wrapper fadeInDown">
             <div id="formContent">
 
-  <form action="" method="post" autocomplete="off">
+  <form action="ViewFaculty" method="post" autocomplete="off">
 
                     <!-- user id text box -->
                     <div class="row">

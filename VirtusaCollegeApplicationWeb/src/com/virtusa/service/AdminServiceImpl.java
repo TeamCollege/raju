@@ -104,7 +104,10 @@ public class AdminServiceImpl implements AdminService
 			boolean stored = adminDAO.storeStudentDetailsDAO(student);
 			if(stored)
 				result = "success";
-		} catch (SQLException e) {
+		}catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();}
+		catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -112,12 +115,13 @@ public class AdminServiceImpl implements AdminService
 	}
 
 	@Override
-	public void deleteStudentService(String studentId) 
+	public boolean deleteStudentService(int studentId) 
 	{
-		List<Student> studentList = new ArrayList<Student>();
-		studentList.remove(studentId);
+		boolean result = false;
+		//List<Student> studentList = new ArrayList<Student>();
+		//studentList.remove(studentId);
 		try {
-			adminDAO.deleteStudentDetailsDAO(studentId);
+			result = adminDAO.deleteStudentDetailsDAO(studentId);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -125,6 +129,7 @@ public class AdminServiceImpl implements AdminService
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return result;
 	}
 	
 	@Override
@@ -142,10 +147,11 @@ public class AdminServiceImpl implements AdminService
 		
 	}
 	@Override
-	public void viewStudentService(int studentId2)
+	public List<Student> viewStudentService(int studentId2)
 	{
+		List<Student> students = null;
 		try {
-			adminDAO.viewStudentDetailsDAO(studentId2);
+		 students	=adminDAO.viewStudentDetailsDAO(studentId2);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -153,6 +159,7 @@ public class AdminServiceImpl implements AdminService
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return students;
 		
 	}
 
